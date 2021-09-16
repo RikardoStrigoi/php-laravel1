@@ -15,12 +15,11 @@ class SeriesController extends Controller
             'Godless'
         ];
     
-        $html = "<ul>";
-        foreach ($series as $serie) {
-            $html .= "<li>$serie</li>";
-        }
-        $html .= "</ul>";
-    
-        return $html;
+        return view('series.index', compact('series'));
+    }
+
+    public function create()
+    {
+        return view('series.create');
     }
 }
